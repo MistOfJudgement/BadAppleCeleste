@@ -1,0 +1,6 @@
+﻿- Name: BadAppleCelesteMod
+  Version: 1.0.0
+  DLL: bin/x86/Debug/BadAppleCelesteMod.dll
+  Dependencies:
+    - Name: Everest
+      Version: 1.0.0

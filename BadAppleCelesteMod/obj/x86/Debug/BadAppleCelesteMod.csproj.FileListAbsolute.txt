@@ -1,0 +1,11 @@
+G:\Celeste\Mods\BadAppleCeleseteMod\obj\x86\Debug\BadAppleCelesteMod.csproj.CoreCompileInputs.cache
+G:\Celeste\Mods\BadAppleCeleseteMod\bin\x86\Debug\BadAppleCelesteMod.dll
+G:\Celeste\Mods\BadAppleCeleseteMod\bin\x86\Debug\BadAppleCelesteMod.pdb
+G:\Celeste\Mods\BadAppleCeleseteMod\obj\x86\Debug\BadAppleCelesteMod.dll
+G:\Celeste\Mods\BadAppleCeleseteMod\obj\x86\Debug\BadAppleCelesteMod.pdb
+G:\Celeste\Mods\BadAppleCelesteMod\bin\x86\Debug\BadAppleCelesteMod.dll
+G:\Celeste\Mods\BadAppleCelesteMod\bin\x86\Debug\BadAppleCelesteMod.pdb
+G:\Celeste\Mods\BadAppleCelesteMod\obj\x86\Debug\BadAppleCelesteMod.csproj.CoreCompileInputs.cache
+G:\Celeste\Mods\BadAppleCelesteMod\obj\x86\Debug\BadAppleCelesteMod.dll
+G:\Celeste\Mods\BadAppleCelesteMod\obj\x86\Debug\BadAppleCelesteMod.pdb
+G:\Celeste\Mods\BadAppleCelesteMod\obj\x86\Debug\BadAppleCelesteMod.csproj.AssemblyReference.cache
