@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using Celeste;
 using Celeste.Mod.BadAppleCelesteMod;
@@ -12,7 +12,7 @@ namespace Celeste.Mod.BadAppleCeleseteMod
 
         public static EverestModule Instance;
         AnimationController animationController;
-        EventInstance song;
+        //EventInstance song;
         System.Diagnostics.Stopwatch stopwatch;
         Vector2 spawnLocation = new Vector2(0, 0);
         public BadAppleCelesteModule() {
@@ -22,6 +22,11 @@ namespace Celeste.Mod.BadAppleCeleseteMod
         }
         public override Type SettingsType  => typeof(BadAppleCelesteSettings);
         public static BadAppleCelesteSettings Settings => (BadAppleCelesteSettings)Instance._Settings;
+        public override void Unload() {
+            On.Celeste.Player.Update -= onUpdate;
+            On.Celeste.Player.Die -= Player_Die;
+            Everest.Events.Level.OnTransitionTo -= Level_OnTransitionTo;
+        }
         public override void Load() {
             On.Celeste.Player.Update += onUpdate;
             On.Celeste.Player.Die += Player_Die;
@@ -32,21 +37,20 @@ namespace Celeste.Mod.BadAppleCeleseteMod
 
         private void Level_OnTransitionTo(Level level, LevelData next, Vector2 direction) {
             spawnLocation = next.Position;
+            /*
             if(song != null) {
                 Audio.Stop(song);
 
             }
+            */
             animationController.Reset();
         }
 
-        public override void Unload() {
-            On.Celeste.Player.Update -= onUpdate;
-            On.Celeste.Player.Die -= Player_Die;
-            Everest.Events.Level.OnTransitionTo -= Level_OnTransitionTo;
-        }
+        
         
         private PlayerDeadBody Player_Die(On.Celeste.Player.orig_Die orig, Player self, Vector2 direction, bool evenIfInvincible, bool registerDeathInStats) {
-            Audio.Stop(song);
+            //Audio.Stop(song);
+
             animationController.Reset();
 
             return orig(self, direction, evenIfInvincible, registerDeathInStats);
@@ -67,13 +71,13 @@ namespace Celeste.Mod.BadAppleCeleseteMod
                 
                 animationController.LoadScene(0, 0, self.Scene);
                 animationController.playing = true;
-                song = Audio.Play("event:/badapple/【東方】Bad Apple!! ＰＶ【影絵】");
-
+                // song = Audio.Play("event:/badapple/【東方】Bad Apple!! ＰＶ【影絵】");
+                Audio.SetMusic("event:/badapple/【東方】Bad Apple!! ＰＶ【影絵】");
             }
-
+            /*
             if(!animationController.playing && Audio.IsPlaying(song)) {
                 Audio.Stop(song);
-            }
+            }*/
             stopwatch.Stop();
             animationController.Update(stopwatch.Elapsed.TotalSeconds);
             stopwatch.Restart();
